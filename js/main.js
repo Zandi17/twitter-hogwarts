@@ -1,6 +1,7 @@
 window.addEventListener("load", function() {
 	var boton = document.getElementById("boton");
-	boton.addEventListener("click", function() {
+	boton.addEventListener("click", function(e) {
+	e.preventDefault();
 	var txt = document.getElementById("txt").value;
 	document.getElementById("txt").value = "";
 	var pub =document.createElement("p");
