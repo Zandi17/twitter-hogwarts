@@ -24,3 +24,10 @@ textarea {
   width: 180px;
   color: black;
 }
+#contendor {
+    /*margin-top: 30px;
+    margin-left: 230px;*/
+    width: 300px;
+    background-color: black;
+    opacity: 0.4;
+}
