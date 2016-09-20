@@ -1,6 +1,7 @@
 window.addEventListener("load", function() {
 	var boton = document.getElementById("boton");
 	var txtArea = document.getElementById("txt");
+	txtArea.addEventListener('keydown', autosize);
 	var contador = document.getElementById("contar");
 	var caracteres = contador.innerHTML = 140;
 	boton.addEventListener("click", function(e) {
@@ -9,7 +10,8 @@ window.addEventListener("load", function() {
 	txtArea.value =" ";
 	boton.disabled = true;
 	contador.innerHTML = 140;
-	contador.classList.remove("red1","red2")
+	contador.classList.remove("red1","red2");
+	resize();
 
 	});
 	// funcion
@@ -20,8 +22,18 @@ window.addEventListener("load", function() {
 	contenedor.insertBefore(pub,contenedor.childNodes[0]);
 	document.getElementById("txt").value = "";
 	}
+	function autosize(){
+  	var el = this;
+  	setTimeout(function(){
+    el.style.cssText = 'height:auto';
+    el.style.cssText = 'height:' + el.scrollHeight + 'px';
+  	},0);
+	}
+	function resize(){
+	txtArea.style.cssText = 'height:auto';
+	}
 	// nuevo evento
-	txtArea.addEventListener("keydown",function(){
+	txtArea.addEventListener("keyup",function(){
 	boton.disabled = false;
 	var long = txtArea.value.length;
 
@@ -33,11 +45,19 @@ window.addEventListener("load", function() {
 	 if (long > caracteres){
 	 	boton.disabled = true;
 	 }
+	 if(long == 0){
+	 	boton.disabled = false;
+	 }
 	  if (long > 120) {
 	 	contador.classList.add("red1");
 	 }
 	 if (long > 130) {
 	 	contador.classList.add("red2");
-	};
+	}
 	});
 });
+
+
+             
+
+	
