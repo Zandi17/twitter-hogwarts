@@ -9,6 +9,8 @@ window.addEventListener("load", function() {
 	txtArea.value =" ";
 	boton.disabled = true;
 	contador.innerHTML = 140;
+	contador.classList.remove("red1","red2")
+
 	});
 	// funcion
 	function agregarMensaje(texto){
@@ -28,6 +30,14 @@ window.addEventListener("load", function() {
 	}else {
 		contador.innerHTML = caracteres - long;
 	}
+	 if (long > caracteres){
+	 	boton.disabled = true;
+	 }
+	  if (long > 120) {
+	 	contador.classList.add("red1");
+	 }
+	 if (long > 130) {
+	 	contador.classList.add("red2");
+	};
 	});
-
 });
