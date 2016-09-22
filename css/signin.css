@@ -4,12 +4,12 @@ background-size: 100%;
 text-align: center;
 color : white;
 font-size: bold;
-font-family: 'Indie Flower', cursive;
 font-size: 20px;
 }
 h1 {
   text-align: center;
   color: white;
+  font-family: 'Indie Flower', cursive;
   font-size: 50px;
 }
 p{
@@ -45,6 +45,5 @@ textarea {
 .red2{
   color : black;
 }
-div {
-  background : black;
+
 }

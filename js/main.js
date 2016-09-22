@@ -12,7 +12,8 @@ window.addEventListener("load", function() {
 	txtArea.value =" ";
 	boton.disabled = true;
 	contador.innerHTML = 140;
-	contador.classList.remove("red1","red2");
+	contador.classList.remove("red1");
+	contador.classList.remove("red2");
 	resize();
 	agregarHora();
 
@@ -43,7 +44,7 @@ window.addEventListener("load", function() {
             if (minuto < 10) {
                 minuto = "0" + minuto;
             }
-        var horaImprimible = hora + " : " + minuto + " : ";
+        var horaImprimible = hora + " : " + minuto;
         var hora = document.createElement("div");
 		hora.innerText = horaImprimible;
 
@@ -67,6 +68,12 @@ window.addEventListener("load", function() {
 	 }
 	  if (long > 120) {
 	 	contador.classList.add("red1");
+	 }
+	 if (long < 120){
+	 contador.classList.remove("red1");	
+	 }
+	  if (long < 130){
+	 contador.classList.remove("red2");	
 	 }
 	 if (long > 130) {
 	 	contador.classList.add("red2");
